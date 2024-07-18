@@ -1,113 +1,201 @@
+import { Button } from "@/components/ui/button";
+import { Flower, GroupIcon, SprayCan } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import ContactForm from "./_components/ContactForm";
+import FadeIn from "./_components/FadeIn";
+import Footer from "./_components/Footer";
+import Navbar from "./_components/Navbar";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      {/* Hero Section */}
+      <section className="bg-slate-100" id="hero-section">
+        <div className="container mx-auto pt-16">
+          <Navbar />
         </div>
-      </div>
+        <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+          <div class="mr-auto place-self-center lg:col-span-7">
+            <h1 class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+              Professional Cleaning Services in New York
+            </h1>
+            <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+              Where Cleanliness Meets Professionalism. We provide the services
+              you need to keep your business clean.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <Link href="#contact-us">
+                <Button className="hover:bg-accent">Join Our Network</Button>
+              </Link>
+            </div>
+          </div>
+          <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+            <Image src={"/newhero.png"} alt="mockup" width={700} height={700} />
+          </div>
+        </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      {/* Content Section */}
+      <section className="bg-slate-100 py-20 dark:bg-gray-900" id="about-us">
+        <FadeIn>
+          <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+            <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                Creating a Healthy Environment for Students
+              </h2>
+              <p className="mb-4">
+                A clean organization is essential for promoting student health
+                and well-being. It helps prevent the spread of germs, reduce
+                allergies, and creates a positive learning atmosphere.
+              </p>
+              <p>
+                We are strategists, designers and developers. Innovators and
+                problem solvers. Small enough to be simple and quick.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4 mt-8">
+              <img
+                className="w-full rounded-lg"
+                src={"/ctapic.jpeg"}
+                alt="office content 1"
+              />
+              <img
+                className="mt-4 w-full lg:mt-10 rounded-lg"
+                src={"/broom.jpeg"}
+                alt="office content 2"
+              />
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+      {/* Content Section */}
+      <section className="bg-slate-100 dark:bg-gray-900 ">
+        <FadeIn>
+          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div className="max-w-screen-lg text-gray-500 sm:text-lg dark:text-gray-400">
+              <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">
+                Providing Specialized Cleaning Proficiency:
+                <br /> Custom Solutions for Your Organization
+              </h2>
+              <p className="mb-4 font-light">
+                At CJ Environmental, we are commited to providing a clean
+                environment. A clean environment is a key component of a modern,
+                safe,and effective organization. we can assure you our expert
+                staff goes above and beyond to deliver sparkling results and our
+                training ensures that your organization is always treated with
+                professionalism and respect
+              </p>
+              <p className="mb-4 font-medium">
+                Tailor cleaning services to your specific needs, whether it's
+                daily, weekly, or bi-weekly. Focus on your core business while
+                we ensure a consistently clean and healthy environment.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+      {/* Services Section */}
+      <section className="bg-slate-100 body-font" id="services-section">
+        <FadeIn>
+          <div className="container px-5 py-24 mx-auto">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font text-center mb-20">
+              We Offer a wide variety of services catering to all your cleaning
+              demands
+              <br className="hidden sm:block" />
+              CJ Environmental Solutions LLC
+            </h1>
+            <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+              <div className="p-4 md:w-1/3 flex">
+                <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-300 text-primary mb-4 flex-shrink-0">
+                  <Flower />
+                </div>
+                <div className="flex-grow pl-6">
+                  <h2 className="text-lg title-font font-medium mb-2">
+                    Whole Environment Cleaning
+                  </h2>
+                  <p className="leading-relaxed text-base">
+                    Our experienced team provides thorough and efficient
+                    cleaning services to ensure a clean and healthy environment
+                    for all students and staff. From classrooms to common areas
+                    we cover it all.
+                  </p>
+                </div>
+              </div>
+              <div className="p-4 md:w-1/3 flex">
+                <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-300 text-primary mb-4 flex-shrink-0">
+                  <SprayCan size={24} />
+                </div>
+                <div className="flex-grow pl-6">
+                  <h2 className="text-lg title-font font-medium mb-2">
+                    Disinfection
+                  </h2>
+                  <p className="leading-relaxed text-base">
+                    In today’s world, maintaining a hygienic environment is
+                    crucial. Our disinfection services utilize advances
+                    techniques an products to effectively eliminate germs and
+                    viruses, keeping the organization safe.
+                  </p>
+                </div>
+              </div>
+              <div className="p-4 md:w-1/3 flex">
+                <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-300 text-primary mb-4 flex-shrink-0">
+                  <GroupIcon size={24} />
+                </div>
+                <div className="flex-grow pl-6">
+                  <h2 className="text-lg title-font font-medium mb-2">
+                    Flooring
+                  </h2>
+                  <p className="leading-relaxed text-base">
+                    We understand the importance of well-maintained floors in
+                    organizations. Our team specializes in floor cleaning,
+                    polishing, and maintenance, ensuring a clean and polished
+                    appearance.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+      {/* CTA Section */}
+      <section className="bg-slate-100 dark:bg-gray-900" id="cta-section">
+        <FadeIn>
+          <div className="bg-slate-900">
+            <div className="bg-gradient-to-b from-primary/[.15] via-transparent">
+              <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
+                <div className="max-w-3xl text-center mx-auto">
+                  <h1 className="block font-medium text-gray-200 text-3xl sm:text-5xl md:text-xl lg:text-5xl">
+                    Join Our Client Network
+                  </h1>
+                </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+                <div className="max-w-3xl text-center mx-auto">
+                  <p className="text-lg text-gray-400">
+                    Experience the difference with Staten Island's premier
+                    cleaning service. Join our network of satisfied clients and
+                    enjoy a cleaner, healthier environment today.
+                  </p>
+                </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+                <div className="text-center">
+                  <Button className="hover:bg-accent">Get Started</Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+      {/* Contact Section */}
+      <section className="bg-gray-100" id="contact-us">
+        <FadeIn>
+          <ContactForm />
+        </FadeIn>
+      </section>
+      {/* Footer Section */}
+      <section>
+        <Footer />
+      </section>
     </main>
   );
 }
