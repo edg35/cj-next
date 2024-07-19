@@ -31,12 +31,16 @@ export async function sendEmail(contactFormData) {
 export async function saveContactFrom(contactFormData) {
   const { name, email, phone, message } = contactFormData;
 
-  const dbResponse = await db.insert(ContactForm).values({
-    name: name,
-    email: email,
-    phone: phone,
-    message: message,
-  });
+  try {
+    const dbResponse = await db.insert(ContactForm).values({
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+    });
 
-  return dbResponse;
+    return { success: true, dbResponse };
+  } catch (err) {
+    return { success: false, error: err };
+  }
 }
