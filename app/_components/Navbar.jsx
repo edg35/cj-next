@@ -28,9 +28,9 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="text-black backdrop-blur-md rounded-sm bg-gradient-to-br from-accentglass to-primaryglass">
+    <nav className="text-black backdrop-blur-md rounded-sm bg-transparent md:bg-gradient-to-br from-accentglass to-primaryglass">
       <div>
-        <div className="flex justify-between items-center py-4 h-full">
+        <div className="flex justify-between items-center py-4 h-full pr-4">
           <Image
             src={"/pixelcut-export.png"}
             width={30}
@@ -57,7 +57,7 @@ function Navbar() {
             </li>
           </ul>
           <Button
-            className="md:hidden mr-6 bg-transparent hover:bg-transparent"
+            className="md:hidden bg-transparent hover:bg-transparent"
             onClick={toggleDropdown}
           >
             <MenuIcon className="text-black" />

@@ -12,7 +12,7 @@ export default function Home() {
     <main>
       {/* Hero Section */}
       <section className="bg-slate-100" id="hero-section">
-        <div className="container mx-auto pt-16">
+        <div className="container mx-auto md:pt-16">
           <Navbar />
         </div>
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
