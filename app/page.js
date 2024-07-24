@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Flower, GroupIcon, SprayCan } from "lucide-react";
+import Link from "next/link";
 import ContactForm from "./_components/ContactForm";
 import Footer from "./_components/Footer";
 import Navbar from "./_components/Navbar";
@@ -26,7 +27,9 @@ export default function Home() {
               Solutions
             </p>
             <div className="flex justify-center">
-              <Button className="hover:bg-accent">Learn More</Button>
+              <Link href="#services-section">
+                <Button className="hover:bg-accent">Learn More</Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -35,7 +38,7 @@ export default function Home() {
       <section class="bg-slate-100 dark:bg-gray-900 py-10">
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <img
-            class="w-full dark:hidden"
+            class="w-full dark:hidden rounded-sm"
             src="/classroom.jpg"
             alt="dashboard image"
           />
@@ -49,7 +52,9 @@ export default function Home() {
               germs, reduces allergies, and creates a positive learning
               atmosphere.
             </p>
-            <Button className="hover:bg-accent">Get Started</Button>
+            <Link href="#contact-us">
+              <Button className="hover:bg-accent">Get Started</Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -97,12 +102,12 @@ export default function Home() {
           </div>
           <div class="grid grid-cols-2 gap-4 mt-8">
             <img
-              class="w-full rounded-lg h-[400px] object-cover"
+              class="w-full rounded-sm h-[400px] object-cover"
               src="/broom.jpg"
               alt="office content 1"
             />
             <img
-              class="mt-4 w-full lg:mt-10 rounded-lg h-[400px] object-cover"
+              class="mt-4 w-full lg:mt-10 rounded-sm h-[400px] object-cover"
               src="/ctapic.jpeg"
               alt="office content 2"
             />
@@ -190,14 +195,16 @@ export default function Home() {
               </div>
 
               <div className="text-center">
-                <Button className="hover:bg-accent">Get Started</Button>
+                <Link href="#contact-us">
+                  <Button className="hover:bg-accent">Get Started</Button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* Contact Section */}
-      <section className="bg-gray-100" id="contact-us py-10">
+      <section className="bg-gray-100 py-10" id="contact-us">
         <ContactForm />
       </section>
       {/* Footer Section */}
