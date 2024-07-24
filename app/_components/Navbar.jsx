@@ -28,7 +28,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="text-black backdrop-blur-md rounded-sm bg-transparent md:bg-gradient-to-br from-accentglass to-primaryglass">
+    <nav className="text-black backdrop-blur-md rounded-sm bg-transparent bg-gradient-to-br from-accentglass to-primaryglass">
       <div>
         <div className="flex justify-between items-center py-4 h-full pr-4">
           <Image
