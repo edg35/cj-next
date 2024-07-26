@@ -14,10 +14,11 @@ export default function Home() {
       </section>
       {/* Hero Section */}
       <section
-        className="bg-[url('/bridge.jpg')] h-[650px] bg-cover bg-center"
+        className="relative bg-[url('/bridge.jpg')] h-[650px] bg-cover bg-center"
         id="hero-section"
       >
-        <div className="container px-5 py-24 mx-auto flex flex-col justify-center items-center w-full h-full">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100 z-0"></div>
+        <div className="container px-5 py-24 mx-auto flex flex-col justify-center items-center w-full h-full z-10">
           <div className="text-center lg:w-2/3 w-full backdrop-blur-md rounded-sm py-10 bg-glass">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-extrabold text-gray-900 dark:text-white">
               Professional Cleaning Services in New York
@@ -34,6 +35,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* Content Section */}
       <section class="bg-slate-100 dark:bg-gray-900 py-10">
         <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
@@ -102,12 +104,12 @@ export default function Home() {
           </div>
           <div class="grid grid-cols-2 gap-4 mt-8">
             <img
-              class="w-full rounded-sm h-[400px] object-cover"
+              class="w-full rounded-sm md:h-[400px] h-[200px] object-cover"
               src="/broom.jpg"
               alt="office content 1"
             />
             <img
-              class="mt-4 w-full lg:mt-10 rounded-sm h-[400px] object-cover"
+              class="w-full rounded-sm md:h-[400px] h-[200px] object-cover"
               src="/ctapic.jpeg"
               alt="office content 2"
             />

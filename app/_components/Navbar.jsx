@@ -28,16 +28,21 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="text-black backdrop-blur-md rounded-sm bg-transparent bg-gradient-to-br from-accentglass to-primaryglass">
+    <nav className="text-black rounded-sm bg-slate-100">
       <div>
         <div className="flex justify-between items-center py-4 h-full pr-4">
-          <Image
-            src={"/pixelcut-export.png"}
-            width={30}
-            height={30}
-            alt="logo"
-            className="ml-6"
-          />
+          <div className="flex flex-row gap-3">
+            <Image
+              src={"/pixelcut-export.png"}
+              width={30}
+              height={30}
+              alt="logo"
+              className="ml-6"
+            />
+            <h3 className="flex items-center font-bold text-lg">
+              CJ Environmental Solutions LLC
+            </h3>
+          </div>
 
           <ul className="hidden md:flex align-middle h-10">
             <li className="px-4 flex items-center hover:text-gray-600 cursor-pointer transition-all hover:font-semibold">

@@ -68,7 +68,7 @@ function ContactForm() {
           </p>
 
           <div className="mt-8">
-            <a href="#" className="text-2xl font-bold text-accent">
+            <a href="#" className="text-xl md:text-2xl font-bold text-accent">
               cjesolutions1014@gmail.com
             </a>
 
