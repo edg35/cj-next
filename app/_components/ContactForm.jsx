@@ -1,60 +1,38 @@
 "use client";
-import { Button } from "@/components/ui/button";
+
 import { useToast } from "@/components/ui/use-toast";
-import { LoaderCircle } from "lucide-react";
-import { useState } from "react";
-import { saveContactFrom, sendEmail } from "../_actions";
+import { useRef, useState } from "react";
+import { saveContactForm } from "../_actions";
+import FormSubmitButton from "./FormSubmitButton";
 
 function ContactForm() {
-  const initialFormState = {
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  };
-
-  const [formData, setFormData] = useState(initialFormState);
-  const [loading, setLoading] = useState(false);
+  const formRef = useRef(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const onSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
+    setIsSubmitting(true);
 
-    // Send form data in an email and save to database
-    const email = await sendEmail(formData);
-    const dbSave = await saveContactFrom(formData);
+    const formData = new FormData(formRef.current);
+    const result = await saveContactForm(formData);
 
-    if (!email.success) {
-      // Handle error
+    if (result) {
       toast({
-        variant: "destructive",
-        message: "An error occurred. Please try again later.",
+        title: "Message Sent",
+        description: "Your message has been sent successfully.",
+        type: "success",
       });
-
-      setLoading(false);
-      setFormData(initialFormState);
-      return;
+    } else {
+      toast({
+        title: "Error",
+        description: "An error occurred while sending your message.",
+        type: "error",
+      });
     }
 
-    // Continue with form submission logic
-    setLoading(false);
-    // Clear out form fields
-    setFormData(initialFormState);
-    // Toast a success message
-    toast({
-      variant: "success",
-      title: "Thank you!",
-      description: "Message sent successfully!",
-    });
+    formRef.current.reset();
+    setIsSubmitting(false);
   };
 
   return (
@@ -68,7 +46,7 @@ function ContactForm() {
           </p>
 
           <div className="mt-8">
-            <a href="#" className="text-2xl font-bold text-accent">
+            <a href="#" className="text-xl md:text-2xl font-bold text-accent">
               cjesolutions1014@gmail.com
             </a>
 
@@ -79,7 +57,7 @@ function ContactForm() {
         </div>
 
         <div className="rounded-md bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-          <form onSubmit={onSubmit} className="space-y-4">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <div>
               <label className="sr-only" htmlFor="name">
                 Name
@@ -90,8 +68,6 @@ function ContactForm() {
                 type="text"
                 id="name"
                 name="name"
-                value={formData.name}
-                onChange={handleInputChange}
                 required
               />
             </div>
@@ -107,8 +83,6 @@ function ContactForm() {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -123,8 +97,6 @@ function ContactForm() {
                   type="tel"
                   id="phone"
                   name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -141,26 +113,12 @@ function ContactForm() {
                 rows="8"
                 id="message"
                 name="message"
-                value={formData.message}
-                onChange={handleInputChange}
                 required
               ></textarea>
             </div>
 
             <div className="mt-4">
-              <Button
-                className="bg-primary hover:bg-accent transition-all"
-                type="submit"
-                disabled={loading}
-              >
-                {loading ? (
-                  <>
-                    <LoaderCircle className="animate-spin" /> Sending
-                  </>
-                ) : (
-                  "Send Message"
-                )}
-              </Button>
+              <FormSubmitButton isSubmitting={isSubmitting} />
             </div>
           </form>
         </div>

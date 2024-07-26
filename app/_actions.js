@@ -6,41 +6,26 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_KEY);
 
-export async function sendEmail(contactFormData) {
-  const { name, email, phone, message } = contactFormData;
-
-  try {
-    const data = await resend.emails.send({
-      to: "ethandavid111@gmail.com",
-      from: "CJ Environmental <onboarding@resend.dev>",
-      subject: "New Contact Form Submission",
-      text: `
-        Name: ${name}
-        Email: ${email}
-        Phone: ${phone}
-        Message: ${message}
+export async function saveContactForm(contactFormData) {
+  const sendEmail = await resend.emails.send({
+    to: "ethandavid111@gmail.com",
+    from: "CJ Environmental <onboarding@resend.dev>",
+    subject: "New Contact Form Submission",
+    text: `
+        Name: ${contactFormData.get("name")}
+        Email: ${contactFormData.get("email")}
+        Phone: ${contactFormData.get("phone")}
+        Message: ${contactFormData.get("message")}
         Please do not reply to this email.
       `,
-    });
-    return { success: true, data };
-  } catch (err) {
-    return { success: false, error: err };
-  }
-}
+  });
 
-export async function saveContactFrom(contactFormData) {
-  const { name, email, phone, message } = contactFormData;
+  const saveContactForm = await db.insert(ContactForm).values({
+    name: contactFormData.get("name"),
+    email: contactFormData.get("email"),
+    phone: contactFormData.get("phone"),
+    message: contactFormData.get("message"),
+  });
 
-  try {
-    const dbResponse = await db.insert(ContactForm).values({
-      name: name,
-      email: email,
-      phone: phone,
-      message: message,
-    });
-
-    return { success: true, dbResponse };
-  } catch (err) {
-    return { success: false, error: err };
-  }
+  return { sendEmail, saveContactForm };
 }

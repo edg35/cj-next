@@ -56,11 +56,11 @@ module.exports = {
           foreground: "rgba(255,255,255,0.5)",
         },
         primaryglass: {
-          DEFAULT: "rgba(24,61,98,0.05)",
+          DEFAULT: "rgba(24,61,98,0.1)",
           foreground: "rgba(24,61,98,0.5)",
         },
         accentglass: {
-          DEFAULT: "rgba(255,171,17,0.05)",
+          DEFAULT: "rgba(255,171,17,0.1)",
           foreground: "rgba(255,171,17,0.5)",
         },
       },
