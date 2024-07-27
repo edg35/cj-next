@@ -39,8 +39,8 @@ function Navbar() {
               alt="logo"
               className="ml-6"
             />
-            <h3 className="flex items-center font-bold text-lg">
-              CJ Environmental Solutions LLC
+            <h3 className="flex items-center font-bold text-md md:text-lg">
+              CJ Environmental Solutions
             </h3>
           </div>
 
@@ -73,7 +73,7 @@ function Navbar() {
       {dropdownOpen && (
         <div
           ref={dropdownRef}
-          className="md:hidden absolute top-16 right-6 w-48 bg-white shadow-lg rounded-md z-1"
+          className="md:hidden absolute top-16 right-6 w-48 bg-white shadow-lg rounded-md z-10"
         >
           <ul className="flex flex-col">
             <li className="px-4 py-2 hover:text-gray-600 cursor-pointer transition-all hover:font-semibold border-b">

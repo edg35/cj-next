@@ -17,8 +17,8 @@ export default function Home() {
         className="relative bg-[url('/bridge.jpg')] h-[650px] bg-cover bg-center"
         id="hero-section"
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100 z-0"></div>
-        <div className="container px-5 py-24 mx-auto flex flex-col justify-center items-center w-full h-full z-10">
+        <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-transparent to-slate-100 z-0"></div>
+        <div className="container px-5 py-24 mx-auto flex flex-col justify-center items-center w-full h-full z-1">
           <div className="text-center lg:w-2/3 w-full backdrop-blur-md rounded-sm py-10 bg-glass">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-extrabold text-gray-900 dark:text-white">
               Professional Cleaning Services in New York
@@ -119,16 +119,19 @@ export default function Home() {
       {/* Services Section */}
       <section className="bg-slate-100 body-font py-10" id="services-section">
         <div className="container px-5 py-24 mx-auto">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font text-center mb-20">
-            We Offer a wide variety of services catering to all your cleaning
-            demands
-            <br className="hidden sm:block" />
-            CJ Environmental Solutions LLC
-          </h1>
+          <div className="flex flex-col text-center w-full mb-20">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font text-center">
+              We Offer a wide variety of services catering to all your cleaning
+              demands
+            </h1>
+            <h3 className="hidden md:block text-xl font-medium title-font text-center mt-7">
+              CJ Environmental Solutions
+            </h3>
+          </div>
           <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
             <div className="p-4 md:w-1/3 flex">
               <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-300 text-primary mb-4 flex-shrink-0">
-                <Flower />
+                <Flower size={24} />
               </div>
               <div className="flex-grow pl-6">
                 <h2 className="text-lg title-font font-medium mb-2">
