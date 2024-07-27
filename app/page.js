@@ -19,7 +19,7 @@ export default function Home() {
       >
         <div className="hidden md:block absolute inset-0 bg-gradient-to-b from-transparent to-slate-100 z-0"></div>
         <div className="container px-5 py-24 mx-auto flex flex-col justify-center items-center w-full h-full z-1">
-          <div className="text-center lg:w-2/3 w-full backdrop-blur-md rounded-sm py-10 bg-glass">
+          <div className="text-center lg:w-2/3 w-full backdrop-blur-lg rounded-sm py-10 bg-glass">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-extrabold text-gray-900 dark:text-white">
               Professional Cleaning Services in New York
             </h1>
