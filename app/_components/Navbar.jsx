@@ -75,23 +75,26 @@ function Navbar() {
           ref={dropdownRef}
           className="md:hidden absolute top-16 right-6 w-48 bg-white shadow-lg rounded-md z-10"
         >
-          <ul className="flex flex-col">
+          <Link href="#services-section">
             <li className="px-4 py-2 hover:text-gray-600 cursor-pointer transition-all hover:font-semibold border-b">
-              <Link href="/">Home</Link>
+              Services
             </li>
+          </Link>
+          <Link href="#about-us">
             <li className="px-4 py-2 hover:text-gray-600 cursor-pointer transition-all hover:font-semibold border-b">
-              <Link href="#services-section">Services</Link>
+              About
             </li>
+          </Link>
+          <Link href="#contact-us">
             <li className="px-4 py-2 hover:text-gray-600 cursor-pointer transition-all hover:font-semibold border-b">
-              <Link href="#about-us">About</Link>
+              Contact
             </li>
-            <li className="px-4 py-2 hover:text-gray-600 cursor-pointer transition-all hover:font-semibold border-b">
-              <Link href="#contact-us">Contact</Link>
-            </li>
+          </Link>
+          <Link href="#contact-us">
             <li className="px-4 py-2 cursor-pointer transition-all">
-              <Link href="#contact-us">Book Now</Link>
+              Book Now
             </li>
-          </ul>
+          </Link>
         </div>
       )}
     </nav>

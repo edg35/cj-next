@@ -38,13 +38,15 @@ export default function Home() {
 
       <article>
         {/* Content Section */}
-        <section class="bg-slate-100 dark:bg-gray-900 py-10">
+        <section class="bg-slate-100 dark:bg-gray-900 py-10" id="about-us">
           <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-            <img
-              class="w-full dark:hidden rounded-sm"
-              src="/classroom.jpg"
-              alt="dashboard image"
-            />
+            <figure>
+              <img
+                class="w-full dark:hidden rounded-sm"
+                src="/classroom.jpg"
+                alt="dashboard image"
+              />
+            </figure>
             <div class="mt-4 md:mt-0">
               <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 Creating a Healthy Environment for Students
@@ -103,7 +105,7 @@ export default function Home() {
                 to delivering high-quality results every time.
               </p>
             </div>
-            <div class="grid grid-cols-2 gap-4 mt-8">
+            <figure class="grid grid-cols-2 gap-4 mt-8">
               <img
                 class="w-full rounded-sm md:h-[400px] h-[200px] object-cover"
                 src="/broom.jpg"
@@ -114,7 +116,7 @@ export default function Home() {
                 src="/ctapic.jpeg"
                 alt="office content 2"
               />
-            </div>
+            </figure>
           </div>
         </section>
         {/* Services Section */}
@@ -131,7 +133,7 @@ export default function Home() {
             </div>
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
               <div className="p-4 md:w-1/3 flex">
-                <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-300 text-primary mb-4 flex-shrink-0">
+                <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-primary text-accent mb-4 flex-shrink-0">
                   <Flower size={24} />
                 </div>
                 <div className="flex-grow pl-6">
@@ -147,7 +149,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-4 md:w-1/3 flex">
-                <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-300 text-primary mb-4 flex-shrink-0">
+                <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-primary text-accent mb-4 flex-shrink-0">
                   <SprayCan size={24} />
                 </div>
                 <div className="flex-grow pl-6">
@@ -163,7 +165,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="p-4 md:w-1/3 flex">
-                <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-gray-300 text-primary mb-4 flex-shrink-0">
+                <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-primary text-accent mb-4 flex-shrink-0">
                   <GroupIcon size={24} />
                 </div>
                 <div className="flex-grow pl-6">
