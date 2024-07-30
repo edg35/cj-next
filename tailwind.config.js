@@ -52,7 +52,7 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         glass: {
-          DEFAULT: "rgba(255,255,255,0.3)",
+          DEFAULT: "rgba(255,255,255,0.5)",
           foreground: "rgba(255,255,255,0.5)",
         },
         primaryglass: {
