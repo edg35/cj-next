@@ -123,11 +123,11 @@ export default function Home() {
         <section className="bg-slate-100 body-font py-10" id="services-section">
           <div className="container px-5 py-24 mx-auto">
             <div className="flex flex-col text-center w-full mb-20">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font text-center">
+              <h1 className="md:text-4xl text-3xl font-bold title-font text-center">
                 We Offer a wide variety of services catering to all your
                 cleaning demands
               </h1>
-              <h3 className="hidden md:block text-xl font-medium title-font text-center mt-7">
+              <h3 className="hidden md:block text-xl font-bold title-font text-center mt-7">
                 CJ Environmental Solutions
               </h3>
             </div>
@@ -137,7 +137,7 @@ export default function Home() {
                   <Flower size={24} />
                 </div>
                 <div className="flex-grow pl-6">
-                  <h2 className="text-lg title-font font-medium mb-2">
+                  <h2 className="text-lg title-font font-bold mb-2">
                     Whole Environment Cleaning
                   </h2>
                   <p className="leading-relaxed text-base">
@@ -153,7 +153,7 @@ export default function Home() {
                   <SprayCan size={24} />
                 </div>
                 <div className="flex-grow pl-6">
-                  <h2 className="text-lg title-font font-medium mb-2">
+                  <h2 className="text-lg title-font font-bold mb-2">
                     Disinfection
                   </h2>
                   <p className="leading-relaxed text-base">
@@ -169,7 +169,7 @@ export default function Home() {
                   <GroupIcon size={24} />
                 </div>
                 <div className="flex-grow pl-6">
-                  <h2 className="text-lg title-font font-medium mb-2">
+                  <h2 className="text-lg title-font font-bold mb-2">
                     Flooring
                   </h2>
                   <p className="leading-relaxed text-base">
@@ -190,7 +190,7 @@ export default function Home() {
           <div className="bg-gradient-to-b from-primary/[.15] via-transparent">
             <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
               <div className="max-w-3xl text-center mx-auto">
-                <h1 className="block font-medium text-gray-200 text-3xl sm:text-5xl md:text-xl lg:text-5xl">
+                <h1 className="block font-bold text-gray-200 text-3xl sm:text-5xl md:text-xl lg:text-5xl">
                   Join Our Client Network
                 </h1>
               </div>

@@ -9,13 +9,25 @@ import { useEffect, useRef, useState } from "react";
 function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const buttonRef = useRef(null);
 
   const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+    setDropdownOpen((prev) => !prev);
   };
 
   const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target) &&
+      buttonRef.current &&
+      !buttonRef.current.contains(event.target)
+    ) {
+      setDropdownOpen(false);
+    }
+  };
+
+  const handleClickLink = (event) => {
+    if (dropdownRef.current && dropdownRef.current.contains(event.target)) {
       setDropdownOpen(false);
     }
   };
@@ -28,7 +40,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="text-black rounded-sm bg-slate-100">
+    <nav className="text-black rounded-sm bg-slate-100 relative">
       <div>
         <div className="flex justify-between items-center py-4 h-full pr-4">
           <div className="flex flex-row gap-3">
@@ -46,9 +58,6 @@ function Navbar() {
 
           <ul className="hidden md:flex align-middle h-10">
             <li className="px-4 flex items-center hover:text-gray-600 cursor-pointer transition-all hover:font-semibold">
-              <Link href="/">Home</Link>
-            </li>
-            <li className="px-4 flex items-center hover:text-gray-600 cursor-pointer transition-all hover:font-semibold">
               <Link href="#services-section">Services</Link>
             </li>
             <li className="px-4 flex items-center hover:text-gray-600 cursor-pointer transition-all hover:font-semibold">
@@ -62,6 +71,7 @@ function Navbar() {
             </li>
           </ul>
           <Button
+            ref={buttonRef}
             className="md:hidden bg-transparent hover:bg-transparent"
             onClick={toggleDropdown}
           >
@@ -75,22 +85,22 @@ function Navbar() {
           ref={dropdownRef}
           className="md:hidden absolute top-16 right-6 w-48 bg-white shadow-lg rounded-md z-10"
         >
-          <Link href="#services-section">
+          <Link href="#services-section" onClick={handleClickLink}>
             <li className="px-4 py-2 hover:text-gray-600 cursor-pointer transition-all hover:font-semibold border-b">
               Services
             </li>
           </Link>
-          <Link href="#about-us">
+          <Link href="#about-us" onClick={handleClickLink}>
             <li className="px-4 py-2 hover:text-gray-600 cursor-pointer transition-all hover:font-semibold border-b">
               About
             </li>
           </Link>
-          <Link href="#contact-us">
+          <Link href="#contact-us" onClick={handleClickLink}>
             <li className="px-4 py-2 hover:text-gray-600 cursor-pointer transition-all hover:font-semibold border-b">
               Contact
             </li>
           </Link>
-          <Link href="#contact-us">
+          <Link href="#contact-us" onClick={handleClickLink}>
             <li className="px-4 py-2 cursor-pointer transition-all">
               Book Now
             </li>
