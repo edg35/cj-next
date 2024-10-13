@@ -38,20 +38,20 @@ export default function Home() {
 
       <article>
         {/* Content Section */}
-        <section class="bg-slate-100 dark:bg-gray-900 py-10" id="about-us">
-          <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
+        <section className="bg-slate-100 dark:bg-gray-900 py-10" id="about-us">
+          <div className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
             <figure>
               <img
-                class="w-full dark:hidden rounded-sm"
+                className="w-full dark:hidden rounded-sm"
                 src="/classroom.jpg"
                 alt="dashboard image"
               />
             </figure>
-            <div class="mt-4 md:mt-0">
-              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+            <div className="mt-4 md:mt-0">
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 Creating a Healthy Environment for Students
               </h2>
-              <p class="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
+              <p className="mb-6 font-light text-gray-500 md:text-lg dark:text-gray-400">
                 A clean organization environment is essential for promoting
                 student health and well-being. It helps prevent the spread of
                 germs, reduces allergies, and creates a positive learning
@@ -88,13 +88,13 @@ export default function Home() {
           </div>
         </section>
         {/* Content Section */}
-        <section class="bg-slate-100 dark:bg-gray-900 py-10">
-          <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-            <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-              <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+        <section className="bg-slate-100 dark:bg-gray-900 py-10">
+          <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+            <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 We are a team of professionals
               </h2>
-              <p class="mb-4">
+              <p className="mb-4">
                 We believe in understanding the specific requirements of each
                 organization and tailoring our cleaning services accordingly.
                 Our approach ensures that we meet and exceed expectations.
@@ -105,14 +105,14 @@ export default function Home() {
                 to delivering high-quality results every time.
               </p>
             </div>
-            <figure class="grid grid-cols-2 gap-4 mt-8">
+            <figure className="grid grid-cols-2 gap-4 mt-8">
               <img
-                class="w-full rounded-sm md:h-[400px] h-[200px] object-cover"
+                className="w-full rounded-sm md:h-[400px] h-[200px] object-cover"
                 src="/broom.jpg"
                 alt="office content 1"
               />
               <img
-                class="w-full rounded-sm md:h-[400px] h-[200px] object-cover"
+                className="w-full rounded-sm md:h-[400px] h-[200px] object-cover"
                 src="/ctapic.jpeg"
                 alt="office content 2"
               />
